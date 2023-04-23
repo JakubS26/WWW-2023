@@ -1,0 +1,149 @@
+html {
+    overflow: scroll;
+}
+
+@font-face {
+    font-family: deja-vu;
+    src: url(DejaVuSerif.ttf);
+}
+
+body {
+    background-color: dodgerblue;
+    text-align: center;
+    /* font-family: 'Gill Sans'; */
+    font-family: deja-vu;
+}
+
+header {
+    color: white;
+    font-size: min(4rem, 10vw);
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+canvas {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 70%;
+    min-width: 50%;
+}
+
+p {
+    display: none;
+    color: white;
+    font-family: inherit;
+    font-size: 2vw;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.new-game-button {
+    /* display: none; */
+    display: flex;
+    margin: auto;
+    text-align: center;
+    font-family: inherit;
+    max-width: 25%;
+    border: solid;
+    border-color: white;
+    color: white;
+    background-color: dodgerblue;
+    font-size: min(4rem, 6vw);
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+.new-game-button:hover {
+    background-color: white;
+    color: dodgerblue;
+}
+
+.quit-game-button {
+    display: none;
+    /* display: flex; */
+    margin: auto;
+    text-align: center;
+    font-family: inherit;
+    max-width: 100%;
+    border: solid;
+    border-color: white;
+    color: white;
+    background-color: dodgerblue;
+    font-size: min(2rem, 6vw);
+    border-width: 2px;
+    border-radius: 10px;
+    margin-bottom: 1%;
+}
+
+.quit-game-button:hover {
+    background-color: white;
+    color: dodgerblue;
+}
+
+.my-grid {
+    display: none;
+    min-height: 18vh;
+    margin-bottom: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+    column-gap: 1%;
+    row-gap: 2%;
+}
+
+.success-message {
+    display: none;
+    font: inherit;
+    color: white;
+    font-size: min(4rem, 10vw);
+    margin: auto;
+}
+
+.failure-message {
+    display: none;
+    font: inherit;
+    color: white;
+    font-size: min(4rem, 10vw);
+    margin: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    .my-grid {
+        max-width: 70%;
+        min-height: 80vh;
+        margin-left: 15%;
+        margin-right: 15%;
+        column-gap: 1%;
+        row-gap: 1%;
+        display: grid;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    p {
+        font-size: 5vw;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .success-message {
+        display: none;
+        font: inherit;
+        color: white;
+        font-size: min(3rem, 8vw);
+        margin: auto;
+    }
+    
+    .failure-message {
+        display: none;
+        font: inherit;
+        color: white;
+        font-size: min(3rem, 8vw);
+        margin: auto;
+    }
+}
+

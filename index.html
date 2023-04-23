@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="letters.css">
+    <meta charset="utf-8">
+    <title>Hangman Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+        HANGMAN
+    </header>
+    <main>
+        <canvas id="my_canvas" width="500" height="300">
+        </canvas>
+        
+        <button class="new-game-button" id="new-game-button">
+            New Game
+        </button>
+
+        <button class="quit-game-button" id="quit-game-button">
+            Quit Game
+        </button>
+
+        <p id="prompt"> Word to guess: _ _ _ _ _ _ _ _ _ _</p>
+
+        <div class="my-grid" id="grid">
+            <button class="item1 letter-button">A</button>
+            <button class="item2 letter-button">B</button>
+            <button class="item3 letter-button">C</button>
+            <button class="item4 letter-button">D</button>
+            <button class="item5 letter-button">E</button>
+            <button class="item6 letter-button">F</button>
+            <button class="item7 letter-button">G</button>
+            <button class="item8 letter-button">H</button>
+            <button class="item9 letter-button">I</button>
+            <button class="item10 letter-button">J</button>
+            <button class="item11 letter-button">K</button>
+            <button class="item12 letter-button">L</button>
+            <button class="item13 letter-button">M</button>
+            <button class="item14 letter-button">N</button>
+            <button class="item15 letter-button">O</button>
+            <button class="item16 letter-button">P</button>
+            <button class="item17 letter-button">Q</button>
+            <button class="item18 letter-button">R</button>
+            <button class="item19 letter-button">S</button>
+            <button class="item20 letter-button">T</button>
+            <button class="item21 letter-button">U</button>
+            <button class="item22 letter-button">V</button>
+            <button class="item23 letter-button">W</button>
+            <button class="item24 letter-button">X</button>
+            <button class="item25 letter-button">Y</button>
+            <button class="item26 letter-button">Z</button>
+        </div>
+
+        <p class="failure-message" id="fail">SORRY, YOU LOST!</p> 
+        <p class="success-message" id="win">CONGRATULATIONS, YOU WON!</p> 
+
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
