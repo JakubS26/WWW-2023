@@ -96,7 +96,7 @@ letters.forEach((button) => {
             console.log(e.target.innerText);
             clicked_buttons.push(e.target.innerText);
             console.log(clicked_buttons);
-            button.style.backgroundColor = "dodgerblue";
+            button.style.backgroundColor = "rgb(30, 144, 255)";
             button.style.color = "white";
             button.style.borderColor = "white";
             checkLetter(e.target.innerText);
@@ -127,7 +127,7 @@ function startGame() {
 
     letters.forEach((button) => {
         button.style.display = "block";
-        button.style.color = "dodgerblue";
+        button.style.color = "rgb(30, 144, 255)";
         button.style.backgroundColor = "white";
     });
 

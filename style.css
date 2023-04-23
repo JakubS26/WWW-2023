@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    background-color: dodgerblue;
+    background-color: rgb(30, 144, 255);
     text-align: center;
     /* font-family: 'Gill Sans'; */
     font-family: deja-vu;
@@ -52,7 +52,7 @@ p {
     border: solid;
     border-color: white;
     color: white;
-    background-color: dodgerblue;
+    background-color: rgb(30, 144, 255);
     font-size: min(4rem, 6vw);
     border-width: 2px;
     border-radius: 10px;
@@ -60,7 +60,7 @@ p {
 
 .new-game-button:hover {
     background-color: white;
-    color: dodgerblue;
+    color: rgb(30, 144, 255);
 }
 
 .quit-game-button {
@@ -73,7 +73,7 @@ p {
     border: solid;
     border-color: white;
     color: white;
-    background-color: dodgerblue;
+    background-color: rgb(30, 144, 255);
     font-size: min(2rem, 6vw);
     border-width: 2px;
     border-radius: 10px;
@@ -82,7 +82,7 @@ p {
 
 .quit-game-button:hover {
     background-color: white;
-    color: dodgerblue;
+    color: rgb(30, 144, 255);
 }
 
 .my-grid {
