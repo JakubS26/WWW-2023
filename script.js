@@ -47,6 +47,8 @@ function checkLetter(l) {
         });
         win.style.display = "block";
         grid.style.display = "none";
+        //Gdy wygrywamy, czyścimy localstorage automatycznie
+        localStorage.clear();
     }
 
     if(!is_present) {
@@ -84,6 +86,8 @@ function checkLetter(l) {
             });
             fail.style.display = "block";
             grid.style.display = "none";
+            //Gdy przegrywamy, czyścimy localstorage automatycznie
+            localStorage.clear();
         } 
 
     }
@@ -95,6 +99,9 @@ letters.forEach((button) => {
         if(clicked_buttons.find((str) => {return str == e.target.innerText}) == undefined) {
             console.log(e.target.innerText);
             clicked_buttons.push(e.target.innerText);
+            //Po dodaniu danego przycisku do tablicy klikniętych przycisków
+            //od razu zapisujemy nowy stan gry w localstorage
+            localStorage.setItem("clicked_buttons", JSON.stringify(clicked_buttons));
             console.log(clicked_buttons);
             button.style.backgroundColor = "rgb(30, 144, 255)";
             button.style.color = "white";
@@ -108,6 +115,9 @@ function startGame() {
 
     chosen_word = words[Math.floor(Math.random() * words.length)];
     console.log(chosen_word);
+
+    //Po wylosowaniu słowa, zapisujemy je do localstorage
+    localStorage.setItem("chosen_word", JSON.stringify(chosen_word));
 
     blanks = "";
     for(i=0; i<chosen_word.length; i++) {
@@ -140,6 +150,8 @@ function startGame() {
 start.addEventListener("click", startGame);
 
 function endGame() {
+
+    localStorage.clear();
 
     ctx.clearRect(0, 0, c.width, c.height);
     drawHangman();
@@ -257,4 +269,56 @@ function drawHangman() {
 }
 
 drawHangman();
+
+//Sprawdzamy, czy w localstorage są jakieś informacje i ewentualnie przywracamy grę
+//do ostatniego stanu
+
+if(localStorage.getItem("chosen_word") != null) {
+    
+    chosen_word = JSON.parse(localStorage.getItem("chosen_word"));
+    console.log("Przywrócono słowo: " + chosen_word);
+    
+    letters_to_guess = chosen_word.length;
+
+    blanks = "";
+    for(i=0; i<chosen_word.length; i++) {
+        blanks += "_ ";
+    }
+
+    p.innerText = "Word to guess: " + blanks;
+
+    ctx.clearRect(0, 0, c.width, c.height);
+
+    p.style.display = "block";
+    quit.style.display = "flex";
+    start.style.display = "none";
+    grid.style.display = "grid";
+    fail.style.display = "none";
+    win.style.display = "none";
+
+    letters.forEach((button) => {
+        button.style.display = "block";
+        button.style.color = "rgb(30, 144, 255)";
+        button.style.backgroundColor = "white";
+    });
+
+    clicked_buttons = JSON.parse(localStorage.getItem("clicked_buttons"));
+
+    console.log("Przywracam tablicę clicked_buttons: " + clicked_buttons);
+
+    letters.forEach((letter) => {
+        if(clicked_buttons.find((str) => {return str == letter.innerText}) != undefined) {
+            console.log("Przywracam literę: " + letter.innerText);
+            console.log(letter.innerText);
+            console.log(clicked_buttons);
+            letter.style.backgroundColor = "rgb(30, 144, 255)";
+            letter.style.color = "white";
+            letter.style.borderColor = "white";
+            checkLetter(letter.innerText);
+        } 
+    });
+
+} else {
+    localStorage.setItem("clicked_buttons", JSON.stringify(clicked_buttons));
+}
 
